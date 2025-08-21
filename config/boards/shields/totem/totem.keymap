@@ -67,7 +67,6 @@
                 bindings = <&kp BSPC>;
             };           
         };
-    };
 
     macros {
         gif: gif {
