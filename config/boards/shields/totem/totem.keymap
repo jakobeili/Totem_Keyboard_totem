@@ -81,6 +81,19 @@
                 , <&macro_tap &kp G &kp I &kp F>
                 ;
         };
+        select: select {
+            label = "select";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp S &kp E &kp L &kp E &kp C &kp T>
+                , <&macro_tap &kp SPACE>
+                , <&macro_tap &kp DE_STAR>
+                , <&macro_tap &kp SPACE>
+                , <&macro_tap &kp F &kp R &kp O &kp M>
+                , <&macro_tap &kp SPACE>
+                ;
+        };
     };
 
         keymap {
@@ -118,9 +131,9 @@ label= "BASE"                              ;
 label= "NAVI"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃   POS1    ┃     UP    ┃           ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     :     ┃
+//             ┃    ESC    ┃   POS1    ┃     UP    ┃    END    ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     :     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   DEL     ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     ,     ┃
+//             ┃    DEL    ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     ,     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃   P UP    ┃  C LOCK   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃    TAB    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -129,9 +142,9 @@ label= "NAVI"                              ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp ESC    &kp HOME    &kp UP      &kp END   &kp RA(N7)       &kp RA(N0)   &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp LS(DOT)
-                &kp DEL    &kp LEFT    &kp DOWN    &kp RIGHT   &kp RA(N8)       &kp RA(N9)   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp COMMA
-    &trans      &trans     &kp PG_UP   &kp CAPS    &kp PG_DN   &kp LS(N8)        &kp LS(N9)    &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY &kp TAB      
+                &kp ESC    &kp HOME    &kp UP      &kp END   &kp DE_LBRC       &kp DE_RBRC   &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp LS(DOT)
+                &kp DEL    &kp LEFT    &kp DOWN    &kp RIGHT   &kp DE_LBKT       &kp DE_RBKT   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp COMMA
+    &trans      &trans     &kp PG_UP   &kp CAPS    &kp PG_DN   &kp DE_LPAR        &kp DE_RPAR    &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY &kp TAB      
                                         &trans      &trans      &trans          &mo ADJ      &trans     &kp KP_N0     
                         >;
                 };
