@@ -82,7 +82,7 @@
         // "select * from"
         select: select {
             label = "select";
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk, behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp S &kp E &kp L &kp E &kp C &kp T>
@@ -97,7 +97,7 @@
         // "order by 1 desc"
         orderby: orderby {
             label = "orderby";
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk, behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp O &kp R &kp D &kp E &kp R>
@@ -113,7 +113,7 @@
         // "Netwrix Tastenkuezel fuer Passwort - STRG ALT U"
         netpw: netpw {
             label = "netpw";
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk, behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
