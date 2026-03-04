@@ -82,7 +82,7 @@
         // "select * from"
         select: select {
             label = "select";
-            compatible = "zmk, behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp S &kp E &kp L &kp E &kp C &kp T>
@@ -97,7 +97,7 @@
         // "order by 1 desc"
         orderby: orderby {
             label = "orderby";
-            compatible = "zmk, behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp O &kp R &kp D &kp E &kp R>
@@ -113,7 +113,7 @@
         // "Netwrix Tastenkuezel fuer Passwort - STRG ALT U"
         netpw: netpw {
             label = "netpw";
-            compatible = "zmk, behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
@@ -127,7 +127,7 @@
         // "Netwrix Tastenkuezel fuer Username - STRG ALT U"
         netusr: netusr {
             label = "neturs";
-            compatible = "zmk, behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
@@ -141,7 +141,7 @@
         // "Netwrix Tastenkuezel fuer gesamtes Login - STRG ALT U"
         netlog: netlog {
             label = "netlog";
-            compatible = "zmk, behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
@@ -153,13 +153,13 @@
         }; 
     };
 
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     tri_layer {
-    //         if-layers = <NAV SYM>;
-    //         then-layer = <NAV>;
-    //     };
-    // };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <NAV SYM>;
+            then-layer = <NAV>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
