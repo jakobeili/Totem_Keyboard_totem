@@ -186,7 +186,7 @@ label= "BASE"                              ;
                 &kp Q       &kp W       &kp E        &kp R        &kp T           &kp Y       &kp U        &kp I             &kp O           &mt RALT P
                 &kp A       &kp S       &kp D        &kp F        &kp G           &kp H       &kp J        &kp K             &kp L           &kp DE_OE 
     &kp LSHIFT  &mt LGUI Z  &mt LALT X  &mt LCTRL C  &mt LSHIFT V &kp B           &kp N       &mt RSHIFT M &mt RCTRL COMMA   &mt LALT DOT    &mt RALT FSLH &kp DE_AE
-                                        &kp LCTRL      &kp TAB    &lt NAV SPACE   &lt SYM RET &kp BSPC     &sl UML
+                                        &kp LCTRL    &lt UML TAB  &lt NAV SPACE   &lt SYM RET &kp BSPC     &sl UML
                         >;
                 };
 
@@ -227,7 +227,7 @@ label= "UML"                               ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃     ä     ┃     SS    ┃   netlog  ┃   netpw   ┃   neturs  ┃   ┃           ┃           ┃           ┃           ┃     ö     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┃           ┃           ┃    cut    ┃    copy   ┃   paste   ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -236,7 +236,7 @@ label= "UML"                               ;
 
                 &none      &none      &none      &none      &none          &none      &kp DE_UE  &none      &kp DE_OE  &none       
                 &kp DE_AE  &kp DE_SZ  &netlog    &netpw     &netusr        &none      &none      &none      &none      &kp DE_OE 
-    &none       &none      &none      &none      &none      &none          &none      &none      &none      &none      &none      &none         
+    &none       &none      &kp LC(X)  &kp LC(C)  &kp LC(V)  &none          &none      &none      &none      &none      &none      &none         
                                       &none      &none      &none          &none      &none     &none      
                         >;
                 };
@@ -253,17 +253,17 @@ label= "NAV"                              ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃    DEL    ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃  PG DOWN  ┃   ┃           ┃     4     ┃     5     ┃     6     ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃           ┃  C LOCK   ┃           ┃           ┃   ┃           ┃     1     ┃     2     ┃     3     ┃           ┃           ┃
+// ┃           ┃           ┃           ┃  C LOCK   ┃           ┃           ┃   ┃           ┃     1     ┃     2     ┃     3     ┃           ┃   STRG    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃           ┃   ┃    ADJ    ┃   BSPC    ┃     0     ┃
+//                                     ┃           ┃           ┃           ┃   ┃   SHIFT   ┃   BSPC    ┃     0     ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp ESC     &kp HOME    &kp UP      &kp END    &kp PG_UP        &none       &kp KP_N7   &kp KP_N8   &kp KP_N9   &none
                 &kp DEL     &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_DN        &none       &kp KP_N4   &kp KP_N5   &kp KP_N6   &none
-    &none       &none       &none       &kp CAPS    &none      &none            &none       &kp KP_N1   &kp KP_N2   &kp KP_N3   &none       &none    
-                                        &none       &none      &none            &to BASE    &kp BSPC    &kp KP_N0     
+    &none       &none       &none       &kp CAPS    &none      &none            &none       &kp KP_N1   &kp KP_N2   &kp KP_N3   &none       &kp LCTRL    
+                                        &none       &none      &none            &kp LSHIFT  &kp BSPC    &kp KP_N0     
                         >;
                 };
 
