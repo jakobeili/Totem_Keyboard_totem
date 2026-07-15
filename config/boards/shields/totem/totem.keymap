@@ -16,6 +16,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include "keys_de.h"
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define SYM  1
@@ -151,6 +152,48 @@
                 , <&macro_release &kp LALT> 
                 ;
         }; 
+        pauseright: pauseright {
+            label = "pauseright";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(LA(PAUSE_BREAK))>
+                , <&macro_tap &kp LG(LC(RIGHT))>
+                ;
+        };
+        pauseleft: pauseleft {
+            label = "pauseleft";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(LA(PAUSE_BREAK))>
+                , <&macro_tap &kp LG(LC(LEFT))>
+                ;
+        };
+    };
+
+    behaviors {
+        td_copy: tap_dance_copy {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>; 
+            bindings = <&kp C>,      
+                       <&kp LC(C)>; 
+        };
+        td_cut: tap_dance_cut {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>; 
+            bindings = <&kp X>,      
+                       <&kp LC(X)>; 
+        };
+        td_paste: tap_dance_paste {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp V>,
+                       <&kp LC(V)>;
+        };
     };
 
     // conditional_layers {
@@ -184,8 +227,8 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷             ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E        &kp R        &kp T           &kp Y       &kp U        &kp I             &kp O           &mt RALT P
-                &kp A       &kp S       &kp D        &kp F        &kp G           &kp H       &kp J        &kp K             &kp L           &kp DE_OE 
-    &kp LCTRL   &mt LGUI Z  &mt LALT X  &mt LCTRL C  &mt LSHIFT V &kp B           &kp N       &mt RSHIFT M &mt RCTRL COMMA   &mt LALT DOT    &mt RALT FSLH &kp DE_AE
+                &mt LGUI A  &mt LALT S  &kp LCTRL D  &mt LSHIFT F &kp G           &kp H       &mt RSHIFT J &mt RCTRL K       &mt LALT L      &kp DE_OE 
+    &kp LCTRL   &kp Z       &td_cut     &td_copy     &td_paste    &kp B           &kp N       &mt RSHIFT M &kp COMMA         &kp DOT         &mt RALT FSLH &kp DE_AE
                                         &none        &lt UML TAB  &lt NAV SPACE   &lt SYM RET &kp BSPC     &sl UML
                         >;
                 };
@@ -222,22 +265,22 @@ label= "SYM"                               ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "UML"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃     ü     ┃           ┃     ö     ┃           ┃
-//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     A     ┃     SS    ┃   netlog  ┃   netpw   ┃   neturs  ┃   ┃           ┃           ┃           ┃           ┃     ö     ┃
-// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃    cut    ┃    copy   ┃   paste   ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
-// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
-//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
- bindings = <
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓            ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃WIN STRG L ┃WIN L SPEZ ┃ WIN TAB   ┃ WIN R SPEZ┃ WIN STRG R┃            ┃           ┃     ü     ┃           ┃     ö     ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫            ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃     A     ┃     SS    ┃   netlog  ┃   netpw   ┃   neturs  ┃            ┃           ┃           ┃           ┃           ┃     ö     ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫            ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃           ┃           ┃    cut    ┃    copy   ┃   paste   ┃           ┃            ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫            ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃           ┃            ┃           ┃           ┃           ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛            ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <           
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none      &none      &none      &none      &none          &none      &kp DE_UE  &none      &kp DE_OE  &none       
-                &kp LC(A)  &kp DE_SZ  &netlog    &netpw     &netusr        &none      &none      &none      &none      &kp DE_OE 
-    &none       &none      &kp LC(X)  &kp LC(C)  &kp LC(V)  &none          &none      &none      &none      &none      &none      &none         
-                                      &none      &none      &none          &none      &none     &none      
+                &kp LG(LC(LEFT)) &pauseleft &kp LG(TAB) &pauseright &kp LG(LC(RIGHT))   &none           &kp DE_UE        &mmv MOVE_UP    &kp DE_OE          &none       
+                &kp LC(A)        &kp DE_SZ  &netlog     &netpw      &netusr             &msc SCRL_UP    &msc MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &kp DE_OE 
+    &none       &none            &kp LC(X)  &kp LC(C)   &kp LC(V)   &none               &msc SCRL_DOWN  &msc SCRL_LEFT   &msc SCRL_RIGHT &none              &none       &none         
+                                            &none       &none       &none               &mkp LCLK       &mkp RCLK        &mkp MCLK  
                         >;
                 };
 
@@ -253,7 +296,7 @@ label= "NAV"                              ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃    DEL    ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃  PG DOWN  ┃   ┃           ┃     4     ┃     5     ┃     6     ┃    :      ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃  WIN+TAB  ┃ WIN STRG L┃WIN STRG R ┃           ┃   ┃   STRG+1  ┃     1     ┃     2     ┃     3     ┃    ,      ┃   STRG    ┃
+// ┃           ┃           ┃           ┃           ┃   .       ┃           ┃   ┃   STRG+1  ┃     1     ┃     2     ┃     3     ┃    ,      ┃   STRG    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃           ┃   ┃   SHIFT   ┃   BSPC    ┃     0     ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -262,7 +305,7 @@ label= "NAV"                              ;
 
                 &kp ESC    &kp HOME     &kp UP           &kp END           &kp PG_UP       &none           &kp KP_N7   &kp KP_N8   &kp KP_N9   &none
                 &kp DEL    &kp LEFT     &kp DOWN         &kp RIGHT         &kp PG_DN       &none           &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp COLON
-    &none       &none      &kp LG(TAB)  &kp LG(LC(LEFT)) &kp LG(LC(RIGHT)) &none           &kp LC(N1)      &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp COMMA  &kp LCTRL    
+    &none       &none      &none        &none            &none             &none           &kp LC(N1)      &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp COMMA  &kp LCTRL    
                                         &none            &none             &none           &kp LSHIFT      &kp BSPC    &kp KP_N0     
                         >;
                 };
