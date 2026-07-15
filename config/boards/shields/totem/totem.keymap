@@ -227,7 +227,7 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷             ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E        &kp R        &kp T           &kp Y       &kp U        &kp I             &kp O           &mt RALT P
-                &mt LGUI A  &mt LALT S  &kp LCTRL D  &mt LSHIFT F &kp G           &kp H       &mt RSHIFT J &mt RCTRL K       &mt LALT L      &kp DE_OE 
+                &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F &kp G           &kp H       &mt RSHIFT J &mt RCTRL K       &mt LALT L      &kp DE_OE 
     &kp LCTRL   &kp Z       &td_cut     &td_copy     &td_paste    &kp B           &kp N       &mt RSHIFT M &kp COMMA         &kp DOT         &mt RALT FSLH &kp DE_AE
                                         &none        &lt UML TAB  &lt NAV SPACE   &lt SYM RET &kp BSPC     &sl UML
                         >;
